@@ -1,20 +1,47 @@
 <template>
-<div >
-<div >
-    <div >
-    <div >Create Component</div>
+<div>
+    <h1>
+        Create a post
+    </h1>
 
-    <div >
-        <button>
-        Here is Create Component.
-        </button>
-    </div>
-    </div>
-</div>
+    <form @submit.prevent="addPost">
+        <div>
+            <div>
+                <div>
+                    <label>Post Title:</label>
+                    <input type=text v-model="post.title">
+                </div>
+            </div>
+        </div>
+        <div>
+            <div>
+                <div>
+                    <label>Post Body:</label>
+                    <textarea v-model="post.body" rows=3></textarea>
+                </div>
+            </div>
+        </div>
+        <br/>
+        <div>
+            <button>
+                Create
+            </button>
+        </div>
+    </form>
 </div>
 </template>
 
 <script>
 export default {
+    data() {
+        return {
+            post: {}
+        }
+    },
+    methods: {
+        addPost() {
+            console.log(this.post)
+        }
+    }
 }
 </script>
