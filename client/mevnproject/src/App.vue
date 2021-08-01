@@ -1,7 +1,25 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <router-view></router-view>
+  <div>
+    <nav>
+      <ul>
+        <li>
+          <router-link
+          to="/"
+          >
+          Home
+          </router-link>
+        </li>
+        <li>
+          <router-link
+          to="/create"
+          >
+          Create Post
+          </router-link>
+        </li>
+      </ul>
+    </nav>
+    <br/>
+    <router-view/>
   </div>
 </template>
 
