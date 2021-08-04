@@ -3,7 +3,8 @@ const app = express();
 const PORT = 4000;
 const cors = require('cors');
 const mongoose = require('mongoose');
-const config = require('./DB.js')
+const config = require('./DB.js');
+const postRouter = require('./post.route')
 
 mongoose.Promise = global.Promise;
 mongoose.connect(config.DB, { useNewUrlParser: true, useUnifiedTopology: true }).then(
@@ -16,6 +17,8 @@ app.use(express.urlencoded({
     extended: true
 }));
 app.use(express.json());
+
+app.use('/posts', postRouter)
 
 app.listen(PORT, function() {
     console.log(`Server is running on port ${PORT}`);
